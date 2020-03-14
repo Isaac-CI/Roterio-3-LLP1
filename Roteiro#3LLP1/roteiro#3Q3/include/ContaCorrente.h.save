@@ -1,0 +1,16 @@
+#ifndef CONTACORRENTE_H
+#define CONTACORRENTE_H
+#include "Conta.h"
+
+
+class ContaCorrente
+{
+    public:
+        ContaCorrente(std::string s, int i, double d);
+
+    protected:
+
+    private:
+};
+
+#endif // CONTACORRENTE_H

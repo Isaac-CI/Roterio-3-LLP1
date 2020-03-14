@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include "Funcionario.h"
+#include "Assalariado.h"
+#include "Horista.h"
+#include "Comissionado.h"
+#include "SistemaGerenciaFolha.h"
+#include "FuncionarioNaoExisteException.h"
+#include "OrcamentoEstouradoException.h"
+
+using namespace std;
+
+int main()
+{
+    unsigned int n;
+    vector<Funcionario*> vetor;
+    Assalariado *secretario = new Assalariado("Jose", 87654321, 3000);
+    Horista *programador = new Horista("Joao", 98765432, 100, 60);
+    Comissionado *vendedor = new Comissionado("Antonio", 23456789, 100, 55);
+    SistemaGerenciaFolha *contraCheque = new SistemaGerenciaFolha(3450975.89);
+    vetor.push_back(secretario);
+    vetor.push_back(programador);
+    vetor.push_back(vendedor);
+
+    contraCheque->setFuncionarios(vetor);
+    
+    for(n=0; n<contraCheque->funcionarios.size())
+    {
+        cout << "O salario pago ao empregado: " << contraCheque->funcionarios[n]->getNome() << " De matricula: " << contraCheque->funcionarios[n]->getMatricula() << " eh: R$" << contraCheque->funcionarios[n]->calculaSalario() << endl; 
+    }
+    
+    cout << "O salario de Joao eh: R$" << contraCheque->consultaSalarioFuncionario("Joao", )
+    
+    return 0;
+}

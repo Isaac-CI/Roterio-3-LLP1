@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+#include "Conta.h"
+#include "ContaCorrente.h"
+#include "ContaEspecial.h"
+#include "Poupanca.h"
+
+using namespace std;
+
+int main()
+{
+    string s1 = "Fulano", s2 = "Beltrano", s3 = "Cicrano", s4 = "Deltrano";
+    Poupanca *fulano = new Poupanca(s1, 12345567, 51, 1000, 1);
+    Conta *beltrano = new Conta(s2, 87654321, 20000);
+    
+    cout << fulano->render() << endl;
+    fulano->setTaxaDeRendimento(1.6);
+    fulano->setVariacao(50);
+    cout << fulano->render() << endl;
+    
+    return 0;
+}

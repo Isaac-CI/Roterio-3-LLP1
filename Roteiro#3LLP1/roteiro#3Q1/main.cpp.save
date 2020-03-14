@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    /*
+        Polimorfismo é um conceito do paradigma de programação orientada a objetos que consiste
+        na possibilidade de representar o comportamento de classes concetas por meio de classes
+        abstratas, ou seja, possibilita que classes distintas tenham acesso a um mesmo método ou
+        suas respectivas sobrecargas.
+        Neste projeto, o método generica, presente tanto na classe operacao quanto na classe soma
+        é um exemplo de método polimórfico.
+    */
+        cout << "Polimorfismo é um conceito do paradigma de programação orientada a objetos que consiste"<<
+        "na possibilidade de representar o comportamento de classes concetas por meio de classes"<<
+        "abstratas, ou seja, possibilita que classes distintas tenham acesso a um mesmo método ou"<<
+        "suas respectivas sobrecargas."<<
+        "Neste projeto, o método generica, presente tanto na classe operacao quanto na classe soma"<<
+        "é um exemplo de método polimórfico." << endl;
+    return 0;
+}

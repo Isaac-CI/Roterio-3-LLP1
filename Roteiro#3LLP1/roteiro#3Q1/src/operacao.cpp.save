@@ -1,0 +1,11 @@
+#include "operacao.h"
+
+operacao::operacao()
+{
+    
+}
+
+operacao::generica(double a, double b)
+{
+    
+}

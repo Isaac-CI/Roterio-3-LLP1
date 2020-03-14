@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1584134392 source:c:\users\isaac\desktop\roteiro #2 llp1\roteiro#3q1\main.cpp
+	<iostream>
+
+1584135078 source:c:\users\isaac\desktop\roteiro #2 llp1\roteiro#3q1\src\operacao.cpp
+	"operacao.h"
+
+1584135496 c:\users\isaac\desktop\roteiro #2 llp1\roteiro#3q1\include\operacao.h
+
+1584135635 source:c:\users\isaac\desktop\roteiro #2 llp1\roteiro#3q1\src\soma.cpp
+	"soma.h"
+
+1584135635 c:\users\isaac\desktop\roteiro #2 llp1\roteiro#3q1\include\soma.h
+	"operacao.h"
+

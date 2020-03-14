@@ -1,0 +1,15 @@
+#include "Conta.h"
+
+Conta::Conta()
+{
+    //ctor
+}
+void Conta::sacar(double d)
+{
+    if(d <= saldo)
+    {
+        saldo -= (d > 0) ? d : -d;
+    }else{
+        cout << "O valor que se deseja sacar é maior que o saldo, tente novamente com uma valor diferente." << endl;
+    }
+}
