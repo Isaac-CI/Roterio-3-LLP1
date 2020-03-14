@@ -3,5 +3,5 @@
 
 FuncionarioNaoExisteException::FuncionarioNaoExisteException()
 {
-    std::cout << ""
+    std::cout << "Funcionario nao existe." << std::endl;
 }

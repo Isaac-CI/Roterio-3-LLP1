@@ -13,7 +13,6 @@ using namespace std;
 
 int main()
 {
-    unsigned int n;
     vector<Funcionario*> vetor;
     Assalariado *secretario = new Assalariado("Jose", 87654321, 3000);
     Horista *programador = new Horista("Joao", 98765432, 100, 60);
@@ -25,24 +24,28 @@ int main()
 
     contraCheque->setFuncionarios(vetor);
 
-    for(n=0; n<vetor.size(); n++)
-    {
-        cout << "O salario pago ao empregado: " << contraCheque->getFuncionarios()[n]->getNome() << " De matricula: " << contraCheque->getFuncionarios()[n]->getMatricula() << " eh: R$" << contraCheque->getFuncionarios()[n]->calculaSalario() << endl;
-    }
-
+    cout << "O salario pago ao empregado: " << secretario->getNome() << " De matricula: " << secretario->getMatricula() << " eh: R$" << secretario->calculaSalario() << endl;
+    cout << "O salario pago ao empregado: " << programador->getNome() << " De matricula: " << programador->getMatricula() << " eh: R$" << programador->calculaSalario() << endl;
+    cout << "O salario pago ao empregado: " << vendedor->getNome() << " De matricula: " << vendedor->getMatricula() << " eh: R$" << vendedor->calculaSalario() << endl;
     cout << "O salario de Joao eh: R$" << contraCheque->consultaSalarioFuncionario("Joao", 98765432) << endl;
 
-    cout << "Caso alguma informacao seja inserida incorretamente, ou o funcionario nao exista:\n" << contraCheque->consultaSalarioFuncionario("nao existe", 0777654321);
-
-    cout << "O valor total da folha de pagamento eh: " << contraCheque->calculaValorTotalFolha() << endl;
-
-    Assalariado *CEO = new Assalariado("Chefe", 80058005, 3450975.89);
-
-    vetor.push_back(CEO);
-    SistemaGerenciaFolha *novo = new SistemaGerenciaFolha(3450975.89);
-    novo->setFuncionarios(vetor);
-
-    cout << "caso o valor a ser pago superar o oracamento:\n" << novo->calculaValorTotalFolha();
+    try
+    {
+        cout << contraCheque->consultaSalarioFuncionario("nao existe", 77777777) << endl;
+    }catch(FuncionarioNaoExisteException erro)
+    {
+        FuncionarioNaoExisteException();
+    }
+    Assalariado *chefe = new Assalariado("The boss", 80058005, 3450975.89);
+    vetor.push_back(chefe);
+    contraCheque->setFuncionarios(vetor);
+    try
+    {
+        cout << contraCheque->calculaValorTotalFolha() << endl;
+    }catch(OrcamentoEstouradoException erro)
+    {
+        OrcamentoEstouradoException();
+    }
 
     return 0;
 }

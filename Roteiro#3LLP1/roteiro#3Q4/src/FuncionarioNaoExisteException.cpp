@@ -3,5 +3,5 @@
 
 FuncionarioNaoExisteException::FuncionarioNaoExisteException()
 {
-    std::cout << "Tal funcionario nao existe, verifique se inseriu corretamente as informacoes." << std::endl;
+    std::cout << "Nao existe tal funcionario" << std::endl;
 }

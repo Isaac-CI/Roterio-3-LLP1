@@ -14,7 +14,6 @@ class SistemaGerenciaFolha
         void setFuncionarios(std::vector<Funcionario*>);
         double calculaValorTotalFolha();
         double consultaSalarioFuncionario(std::string, int);
-        std::vector<Funcionario*> getFuncionarios();
 
     protected:
         std::vector<Funcionario*> funcionarios;

@@ -27,8 +27,9 @@ double SistemaGerenciaFolha::calculaValorTotalFolha()
 }
 double SistemaGerenciaFolha::consultaSalarioFuncionario(std::string s, int i)
 {
+    unsigned int n;
     bool flag = false;
-    for(unsigned int n = 0; n < funcionarios.size(); n++)
+    for(n = 0; n < funcionarios.size(); n++)
     {
         if(funcionarios[n]->getMatricula() == i && funcionarios[n]->getNome() == s)
         {
