@@ -1,7 +1,11 @@
 #include "FuncionarioNaoExisteException.h"
 #include <iostream>
 
-FuncionarioNaoExisteException::FuncionarioNaoExisteException()
+FuncionarioNaoExisteException::FuncionarioNaoExisteException(const char *c)
 {
-    std::cout << "Nao existe tal funcionario" << std::endl;
+    errmsg = c;
+}
+const char* FuncionarioNaoExisteException::what()
+{
+    return errmsg;
 }

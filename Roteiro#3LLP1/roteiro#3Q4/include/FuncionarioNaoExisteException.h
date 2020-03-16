@@ -1,14 +1,16 @@
 #ifndef FUNCIONARIONAOEXISTEEXCEPTION_H
 #define FUNCIONARIONAOEXISTEEXCEPTION_H
-#include <stdexcept>
+#include <exception>
 
 
 class FuncionarioNaoExisteException : public std::exception
 {
     public:
-        FuncionarioNaoExisteException();
+        FuncionarioNaoExisteException(const char *);
+        const char* what();
 
     protected:
+        const char *errmsg;
 
     private:
 };

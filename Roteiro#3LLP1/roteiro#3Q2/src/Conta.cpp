@@ -41,7 +41,15 @@ double Conta::getSaldo()
 }
 void Conta::sacar(double d)
 {
-    saldo -= (d > 0) ? d : -d;
+    SaldoNaoDisponivelException *s = new SaldoNaoDisponivelException("Saldo insuficiente.");
+    d = (d > 0) ? d : -d;
+    if(d > saldo)
+    {
+        throw *s;
+    }else
+    {
+        saldo -= d;
+    }
 }
 void Conta::setLimite(double d)
 {

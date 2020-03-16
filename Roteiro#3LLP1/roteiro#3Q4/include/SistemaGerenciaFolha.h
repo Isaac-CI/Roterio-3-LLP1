@@ -1,7 +1,7 @@
 #ifndef SISTEMAGERENCIAFOLHA_H
 #define SISTEMAGERENCIAFOLHA_H
 #include "Funcionario.h"
-#include <stdexcept>
+#include <exception>
 #include <vector>
 #include <string>
 #include "OrcamentoEstouradoException.h"

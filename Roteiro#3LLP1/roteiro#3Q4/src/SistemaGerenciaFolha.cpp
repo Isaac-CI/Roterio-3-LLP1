@@ -13,7 +13,7 @@ void SistemaGerenciaFolha::setFuncionarios(std::vector<Funcionario*> v)
 }
 double SistemaGerenciaFolha::calculaValorTotalFolha()
 {
-    OrcamentoEstouradoException erro;
+    OrcamentoEstouradoException *o = new OrcamentoEstouradoException("O valor dos salarios a serem pagos supera o orcamento total.");
     double d = 0;
     for(unsigned int n = 0; n < funcionarios.size(); n++)
     {
@@ -21,15 +21,14 @@ double SistemaGerenciaFolha::calculaValorTotalFolha()
     }
     if(d > maxBudget)
     {
-        throw erro;
-        return -1;
+        throw *o;
     }else{
         return d;
     }
 }
 double SistemaGerenciaFolha::consultaSalarioFuncionario(std::string s, int i)
 {
-    FuncionarioNaoExisteException erro;
+    FuncionarioNaoExisteException *f = new FuncionarioNaoExisteException("Tal funcionario nao existe.");
     unsigned int n;
     bool flag = false;
     for(n = 0; n < funcionarios.size(); n++)
@@ -44,7 +43,6 @@ double SistemaGerenciaFolha::consultaSalarioFuncionario(std::string s, int i)
     {
         return funcionarios[n]->calculaSalario();
     }else{
-        throw erro;
-        return -1;
+        throw *f;
     }
 }

@@ -1,7 +1,11 @@
 #include "OrcamentoEstouradoException.h"
 #include <iostream>
 
-OrcamentoEstouradoException::OrcamentoEstouradoException()
+OrcamentoEstouradoException::OrcamentoEstouradoException(const char *c)
 {
-    std::cout << "O valor da folha de pagamento supera o orcamento total" << std::endl;
+    errmsg = c;
+}
+const char* OrcamentoEstouradoException::what()
+{
+    return errmsg;
 }

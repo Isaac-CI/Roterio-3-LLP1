@@ -8,28 +8,46 @@ using namespace std;
 
 int main()
 {
-    string s = "Derzu Omaia";
+    string s = "Jose Jeremias";
     int numero = 12345678, numeroEspecial = 87654321;
     double salario = 10000.59;
-    Conta *Derzu = new Conta(s, numero, salario);
-    ContaEspecial *Omaia = new ContaEspecial(s, numeroEspecial, salario);
+    Conta *Jose = new Conta(s, numero, salario);
+    ContaEspecial *Jeremias = new ContaEspecial(s, numeroEspecial, salario);
 
-    cout << "Saldo antes do deposito na conta normal: " << Derzu->getSaldo() << endl;
-    Derzu->depositar(2300.10);
-    cout << "Saldo apos o deposito na conta normal: " << Derzu->getSaldo() << endl;
-    cout << "Saldo antes do deposito na conta especial: " << Omaia->getSaldo() << endl;
-    Omaia->depositar(20545.55);
-    cout << "Saldo apos do deposito na conta especial: " << Omaia->getSaldo() << endl;
-    Derzu->sacar(2000);
-    cout << "Saldo apos o deposito e o saque na conta normal: " << Derzu->getSaldo() << endl;
-    Omaia->sacar(20000);
-    cout << "Saldo apos o deposito e o saque na conta especial: " << Omaia->getSaldo() << endl;
+    cout << "Saldo antes do deposito na conta normal: " << Jose->getSaldo() << endl;
+    Jose->depositar(2300.10);
+    cout << "Saldo apos o deposito na conta normal: " << Jose->getSaldo() << endl;
+    cout << "Saldo antes do deposito na conta especial: " << Jeremias->getSaldo() << endl;
+    Jeremias->depositar(20545.55);
+    cout << "Saldo apos do deposito na conta especial: " << Jeremias->getSaldo() << endl;
+    try
+    {
+        Jose->sacar(2000);
+        cout << "Saldo apos o deposito e o saque na conta normal: " << Jose->getSaldo() << endl;
+    }catch(SaldoNaoDisponivelException s)
+    {
+        cout << s.what() << endl;
+    }
+    try{
+        Jeremias->sacar(20000);
+        cout << "Saldo apos o deposito e o saque na conta especial: " << Jeremias->getSaldo() << endl;
+    }catch(SaldoNaoDisponivelException s)
+    {
+        cout << s.what() << endl;
+    }
 
-    Derzu->definirLimite();
-    Omaia->definirLimite();
+    Jose->definirLimite();
+    Jeremias->definirLimite();
 
-    cout << "Limite da conta normal: " << Derzu->getLimite() << endl;
-    cout << "Limite da conta especial " << Omaia->getLimite() << endl;
+    cout << "Limite da conta normal: " << Jose->getLimite() << endl;
+    cout << "Limite da conta especial " << Jeremias->getLimite() << endl;
+
+    try{
+        Jeremias->sacar(100000);
+        cout << "Saldo apos o saque: " << Jeremias->getSaldo() << endl;
+    }catch(SaldoNaoDisponivelException s){
+        cout << s.what() << endl;
+    }
 
     return 0;
 }

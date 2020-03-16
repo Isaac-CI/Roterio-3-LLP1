@@ -23,5 +23,5 @@ double Comissionado::getVendasSemanais()
 }
 double Comissionado::calculaSalario()
 {
-    return (vendasSemanais * percentualComissao);
+    return ((vendasSemanais * percentualComissao) + 2500);
 }

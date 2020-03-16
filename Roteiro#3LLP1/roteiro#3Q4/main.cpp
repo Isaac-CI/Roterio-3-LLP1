@@ -32,9 +32,9 @@ int main()
     try
     {
         cout << contraCheque->consultaSalarioFuncionario("nao existe", 77777777) << endl;
-    }catch(FuncionarioNaoExisteException erro)
+    }catch(FuncionarioNaoExisteException f)
     {
-        FuncionarioNaoExisteException();
+        f.what();
     }
     Assalariado *chefe = new Assalariado("The boss", 80058005, 3450975.89);
     vetor.push_back(chefe);
@@ -42,9 +42,9 @@ int main()
     try
     {
         cout << contraCheque->calculaValorTotalFolha() << endl;
-    }catch(OrcamentoEstouradoException erro)
+    }catch(OrcamentoEstouradoException o)
     {
-        OrcamentoEstouradoException();
+        o.what();
     }
 
     return 0;

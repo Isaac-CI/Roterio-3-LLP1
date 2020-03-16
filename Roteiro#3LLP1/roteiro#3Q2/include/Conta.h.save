@@ -1,6 +1,7 @@
 #ifndef CONTA_H
 #define CONTA_H
 #include "IConta.h"
+#include "SaldoNaoDisponivelException.h"
 #include <string>
 
 
